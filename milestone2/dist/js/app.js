@@ -21,8 +21,16 @@ var app = new Vue({
     var _this = this;
 
     axios.get(this.url).then(function (resp) {
-      console.log(resp);
+      //console.log(resp);
       _this.albums = resp.data;
+
+      _this.albums.forEach(function (album) {
+        if (_this.albumGenre.includes(album.genre)) {} else {
+          _this.albumGenre.push(album.genre);
+        }
+      });
+
+      console.log(_this.albumGenre);
     })["catch"](function (error) {
       console.error(e);
     });

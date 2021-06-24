@@ -15,8 +15,16 @@ const app = new Vue({
 
         axios.get(this.url)
             .then(resp => {
-                console.log(resp);
-                this.albums = resp.data
+                //console.log(resp);
+                this.albums = resp.data;
+                this.albums.forEach(album => {
+                    if (this.albumGenre.includes(album.genre)) {
+
+                    } else {
+                        this.albumGenre.push(album.genre)
+                    }
+                });
+                console.log(this.albumGenre);
 
 
 

@@ -73,4 +73,19 @@ $dischi = [
     ]
 ];
 
-//var_dump($dischi[0]);
+
+$rock = array_filter($dischi, function ($album) {
+    return $album['genre'] === 'Rock';
+});
+$pop = array_filter($dischi, function ($album) {
+    return $album['genre'] === 'Pop';
+});
+$jazz = array_filter($dischi, function ($album) {
+    return $album['genre'] === 'Jazz';
+});
+$metal = array_filter($dischi, function ($album) {
+    return $album['genre'] === 'metal';
+});
+
+
+//var_dump($rock);
