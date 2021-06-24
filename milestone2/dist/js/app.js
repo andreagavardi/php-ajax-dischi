@@ -7,7 +7,27 @@
   \********************/
 /***/ (() => {
 
+var app = new Vue({
+  el: '#app',
+  data: {
+    url: "../dist/api/api-dischi.php",
+    albums: "",
+    albumsOrdered: [],
+    albumGenre: [],
+    genreSelected: "All"
+  },
+  methods: {},
+  mounted: function mounted() {
+    var _this = this;
 
+    axios.get(this.url).then(function (resp) {
+      console.log(resp);
+      _this.albums = resp.data;
+    })["catch"](function (error) {
+      console.error(e);
+    });
+  }
+});
 
 /***/ }),
 
